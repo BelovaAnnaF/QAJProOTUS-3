@@ -1,7 +1,7 @@
 package user.createUser;
 
 import dto.UserDTO;
-import dto.UserResponseDTO;
+import dto.UserCreateResponseDTO;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import services.Specification;
@@ -16,13 +16,14 @@ public class CreateUser_Test {
   UserDTO user = UserDTO.builder()
           .id(1)
           .email("jjj@kkk.ru")
+          .phone("5555555555")
           .firstName("Petr")
           .lastName("Kolov")
           .password("123456")
           .username("PetrKolov123")
           .userStatus(201)
           .build();
-  UserResponseDTO userResponseDTO = userCreateApi.createUser(user).extract().body().as(UserResponseDTO.class);
+  UserCreateResponseDTO userResponseDTO = userCreateApi.createUser(user).extract().body().as(UserCreateResponseDTO.class);
 
   Assertions.assertEquals(200, userResponseDTO.getCode());
   Assertions.assertEquals("unknown", userResponseDTO.getType());
@@ -37,7 +38,7 @@ public class CreateUser_Test {
     UserDTO user = UserDTO.builder()
             .username("PetrKolov")
             .build();
-    UserResponseDTO userResponseDTO = userCreateApi.createUser(user).extract().body().as(UserResponseDTO.class);
+    UserCreateResponseDTO userResponseDTO = userCreateApi.createUser(user).extract().body().as(UserCreateResponseDTO.class);
 
     Assertions.assertEquals(200, userResponseDTO.getCode());
     Assertions.assertEquals("unknown", userResponseDTO.getType());

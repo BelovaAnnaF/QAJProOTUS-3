@@ -11,13 +11,13 @@ import lombok.NoArgsConstructor;
 @JsonSerialize
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDTO {
-  private Integer id;
-  private String username;
-  private String firstName;
-  private String lastName;
-  private String email;
-  private String password;
-  private String phone;
-  private Integer userStatus;
+public class UserGetResponseDTO {
+    private Integer id;
+    private String username;
+    private String firstName;
+    private String lastName;
+    private String email;
+    private String password;
+    private String phone;
+    private Integer userStatus;
 }
