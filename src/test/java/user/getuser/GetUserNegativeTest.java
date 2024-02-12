@@ -1,4 +1,4 @@
-package user.getUser;
+package user.getuser;
 
 import dto.UserResponseDTO;
 import org.junit.jupiter.api.Assertions;
@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 import services.Specification;
 import services.UserGetApi;
 
-public class GetUserNegative_Test {
-//Пытаемся получить несуществующего пользователя по имени, проверяем, что ответ 404 и в теле ответа сообщение "User not found"
+public class GetUserNegativeTest {
+  //Пытаемся получить несуществующего пользователя по имени, проверяем, что ответ 404 и в теле ответа сообщение "User not found"
   @Test
   public void getUnCreateUserName(){
     Specification.installSpecification(Specification.requestSpec(), Specification.responseSpecError404());

@@ -1,9 +1,9 @@
 package services;
 
+import static io.restassured.RestAssured.given;
+
 import dto.UserDTO;
 import io.restassured.response.ValidatableResponse;
-
-import static io.restassured.RestAssured.given;
 
 public class UserCreateApi {
   private static final String ADD_USER_PATH = "/user";

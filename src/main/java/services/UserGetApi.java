@@ -1,8 +1,8 @@
 package services;
 
-import io.restassured.response.ValidatableResponse;
-
 import static io.restassured.RestAssured.given;
+
+import io.restassured.response.ValidatableResponse;
 
 public class UserGetApi {
   private static final String GET_USER_PATH = "/user/{username}";
