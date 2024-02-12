@@ -14,7 +14,7 @@ public class GetUser_Test {
 @Test
 public void getUserAllColumnsTest(){
   UserCreateApi userCreateApi = new UserCreateApi();
-  Specification.installSpecification(Specification.requestSpec(), Specification.responseSpecError404());
+  Specification.installSpecification(Specification.requestSpec(), Specification.responseSpecOk200());
   UserDTO user = UserDTO.builder()
           .id(1)
           .email("jjj@kkk.ru")
@@ -29,14 +29,16 @@ public void getUserAllColumnsTest(){
 
   UserGetApi userGetApi = new UserGetApi();
 
-  UserGetResponseDTO getUser = userGetApi.getUser("PetrKolov123")
+  UserGetResponseDTO getUser = userGetApi.getUseInfo("PetrKolov123")
           .extract()
           .body()
-          .as(UserDTO.class);
+          .as(UserGetResponseDTO.class);
 
   Assertions.assertEquals(201, getUser.getUserStatus());
   Assertions.assertEquals("PetrKolov123", getUser.getUsername());
   Assertions.assertEquals(1, getUser.getId());
   Assertions.assertEquals("jjj@kkk.ru", getUser.getEmail());
+  Assertions.assertEquals("Petr", getUser.getFirstName());
+  Assertions.assertEquals("Kolov", getUser.getLastName());
   }
 }

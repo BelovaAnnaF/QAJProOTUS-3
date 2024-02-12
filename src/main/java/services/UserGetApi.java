@@ -7,7 +7,7 @@ import static io.restassured.RestAssured.given;
 public class UserGetApi {
   private static final String GET_USER_PATH = "/user/{username}";
 
-  public ValidatableResponse getUse(String username) {
+  public ValidatableResponse getUseInfo(String username) {
 
     return given()
             .log().all()
