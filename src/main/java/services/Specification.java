@@ -8,10 +8,10 @@ import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
 
 public class Specification {
-  private static final String BASE_URL = "https://petstore.swagger.io/v2";
+  private static String base_url = System.getProperty("base.url", "https://petstore.swagger.io/v2");
   public static RequestSpecification requestSpec(){
     return new RequestSpecBuilder()
-            .setBaseUri(BASE_URL)
+            .setBaseUri(base_url)
             .setContentType(ContentType.JSON)
             .build();
   }
