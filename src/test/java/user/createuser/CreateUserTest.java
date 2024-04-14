@@ -3,6 +3,7 @@ package user.createuser;
 import dto.UserDTO;
 import dto.UserGetResponseDTO;
 import dto.UserResponseDTO;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -22,8 +23,8 @@ public class CreateUserTest {
   private String phone = "5555555555";
   private Integer userStatus = 201;
 
-  //Создать нового пользователя со всеми заполненными полями проверить код ответа и body ответа
   @Test
+  //("Создать нового пользователя со всеми заполненными полями проверить код ответа и body ответа")
   public void createUserAllColumnsTest(){
     UserCreateApi userCreateApi = new UserCreateApi();
     Specification.installSpecification(Specification.requestSpec(), Specification.responseSpecOk200());
@@ -82,8 +83,9 @@ public class CreateUserTest {
     Assertions.assertEquals("User not found", userAfterDeleteGetResponseDTO.getMessage());
   }
 
-  //Создать нового пользователя с частично заполненными полями проверить код ответа и body ответа
+
   @Test
+  //("Создать нового пользователя с частично заполненными полями проверить код ответа и body ответа")
   public void createUserIdNameColumnsTest(){
     UserCreateApi userCreateApi = new UserCreateApi();
     Specification.installSpecification(Specification.requestSpec(), Specification.responseSpecOk200());

@@ -2,11 +2,11 @@ package services;
 
 import static io.restassured.RestAssured.given;
 
+import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
 
 public class UserGetApi {
   private static final String GET_USER_PATH = "/user/{username}";
-
   public ValidatableResponse getUseInfo(String username) {
 
     return given()

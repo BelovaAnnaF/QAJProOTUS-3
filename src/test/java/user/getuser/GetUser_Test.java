@@ -3,6 +3,7 @@ package user.getuser;
 import dto.UserDTO;
 import dto.UserGetResponseDTO;
 import dto.UserResponseDTO;
+import io.qameta.allure.Step;
 import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -20,8 +21,9 @@ public class GetUser_Test {
   private String password ="123456";
   private String phone = "5555555555";
   private Integer userStatus = 201;
-  //получить пользователя по имени проверить ответ и боди (что он соответствует переданным при создании значениям)
+
   @Test
+  //("получить пользователя по имени проверить ответ и боди (что он соответствует переданным при создании значениям)")
   public void getUserAllColumnsTest(){
     UserCreateApi userCreateApi = new UserCreateApi();
     Specification.installSpecification(Specification.requestSpec(), Specification.responseSpecOk200());

@@ -3,6 +3,7 @@ package services;
 import static io.restassured.RestAssured.given;
 
 import dto.UserDTO;
+import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
 
 public class UserCreateApi {
